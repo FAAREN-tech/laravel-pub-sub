@@ -4,7 +4,7 @@ namespace App\Http\Requests\PubSub;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PublishRequest extends FormRequest
+class PublishRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,9 @@ class PublishRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        $this->topicExists();
+
+        return true;
     }
 
     /**

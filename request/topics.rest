@@ -1,0 +1,14 @@
+POST {{BASE_URL}}{{PORT}}/topics/examples
+Content-Type: application/json
+
+{
+    "id": "event_123123123",
+    "event": "customer:created",
+    "body": {
+        "first_name": "Fred",
+        "last_name": "Faaren",
+        "email": "fread@faaren.com"
+    }
+}
+
+###
