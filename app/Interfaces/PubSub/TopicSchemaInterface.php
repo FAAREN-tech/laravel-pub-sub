@@ -12,7 +12,7 @@ interface TopicSchemaInterface
      *
      * @return array
      */
-    public static function getRules(): array;
+    public function getRules(): array;
 
     /**
      * Takes the event from the database
@@ -21,5 +21,5 @@ interface TopicSchemaInterface
      * @param \stdClass $event
      * @return array
      */
-    public static function getResponseData(\stdClass $event): array;
+    public function getResponseData(\stdClass $event): array;
 }

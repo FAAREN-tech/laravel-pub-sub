@@ -27,10 +27,13 @@ return [
             'description' => 'An example topic', // Optional
             'max_tries' => 6, // Optional. Will override default configuration
             'time_between_retries' => 5, // Optional. Will override default configuration
+            'schema' => \App\TopicSchemas\ExampleSchema::class,
             'tokens' => [ // A list of tokens allowed to communicate with this topic
                 'UbCYnMAcNEe7XZ6NPbBw8sr9jt97DxwLcs42fzFXGjrYV4yzvMq9c8t4xvDeQCb8' => [
-                    'read' => true,
-                    'write' => false
+                    'permissions' => [
+                        'subscribe',
+                        'publish'
+                    ]
                 ]
             ]
         ]

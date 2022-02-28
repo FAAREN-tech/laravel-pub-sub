@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\PubSub;
 
+use App\Exceptions\TopicException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PublishRequest extends BaseRequest
@@ -13,20 +14,7 @@ class PublishRequest extends BaseRequest
      */
     public function authorize()
     {
-        $this->topicExists();
-
-        return true;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [
-            //
-        ];
+        return $this->authorizeRequestAction('publish');
+        //$this->authorizeRequestAction('subscribe);
     }
 }
