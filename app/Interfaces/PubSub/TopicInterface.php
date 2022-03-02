@@ -4,7 +4,7 @@ namespace App\Interfaces\PubSub;
 
 use Illuminate\Http\JsonResponse;
 
-interface TopicSchemaInterface
+interface TopicInterface
 {
     /**
      * Defines the rules for the given Topic

@@ -1,11 +1,15 @@
 <?php
 
-namespace App\TopicSchemas;
+namespace App\Topics;
 
-use App\Interfaces\PubSub\TopicSchemaInterface;
+use App\Interfaces\PubSub\TopicInterface;
 
-class ExampleSchema extends BaseSchema implements TopicSchemaInterface
+class ExampleTopic extends Topic implements TopicInterface
 {
+    protected array $tokens = [
+        'UbCYnMAcNEe7XZ6NPbBw8sr9jt97DxwLcs42fzFXGjrYV4yzvMq9c8t4xvDeQCb8' => ['*']
+    ];
+
     public function getRules(): array
     {
         return [

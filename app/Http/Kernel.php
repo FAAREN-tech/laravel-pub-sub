@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\PubSub\TopicExistsMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -49,6 +50,7 @@ class Kernel extends HttpKernel
             'throttle:publish',
             'json',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            TopicExistsMiddleware::class,
             \App\Http\Middleware\PubSub\PublishMiddleware::class,
         ]
     ];
